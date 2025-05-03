@@ -7,7 +7,7 @@ selectedMonth = table.length-1;
 document.getElementById('monthNum').innerText = table[selectedMonth].Month-1;
 
 //filter function if needed
-let totals = {RU:0, Unrest:0, Size:0, maxIL:0, EventChance:0, ACC:0, CUL:0, ECO:0, MAG:0, TEC:0};
+let totals = {RU:0, Unrest:0, Size:0, maxIL:0, ACC:0, CUL:0, ECO:0, MAG:0, TEC:0};
 for (let i = 0; i < selectedMonth; i++)
 {
   console.log(table[i]);
@@ -20,21 +20,13 @@ for (let i = 0; i < selectedMonth; i++)
   totals.ECO+=table[i].ECO_Change;
   totals.MAG+=table[i].MAG_Change;
   totals.TEC+=table[i].TEC_Change;
-  if(table.EventOccur == true)
-  {
-    totals.EventChance=15
-  }
-  else
-  {
-    totals.EventChance=Math.min(90,totals.EventChance+15)
-  }
 }
 
 document.getElementById('RU').innerText = totals.RU;
 document.getElementById('Unrest').innerText = totals.Unrest;
 document.getElementById('Size').innerText = totals.Size;
 document.getElementById('maxIL').innerText = totals.maxIL;
-document.getElementById('eventChance').innerText = totals.EventChance+"%";
+document.getElementById('eventChance').innerText = table[selectedMonth].EventChance+"%";
 document.getElementById('targetNum').innerText = Math.ceil(totals.Size/5);
 document.getElementById('ACC').innerText = totals.ACC;
 document.getElementById('CUL').innerText = totals.CUL;
@@ -45,7 +37,7 @@ document.getElementById('TEC').innerText = totals.TEC;
 
 
 document.getElementById('monthNum2').innerText = table[selectedMonth].Month-1;
-let totals2 = {RU:0, Unrest:0, Size:0, maxIL:0, EventChance:0, ACC:0, CUL:0, ECO:0, MAG:0, TEC:0};
+let totals2 = {RU:0, Unrest:0, Size:0, maxIL:0, ACC:0, CUL:0, ECO:0, MAG:0, TEC:0};
 for (let i = 0; i < selectedMonth+1; i++)
 {
   
@@ -58,22 +50,13 @@ for (let i = 0; i < selectedMonth+1; i++)
   totals2.ECO+=table[i].ECO_Change;
   totals2.MAG+=table[i].MAG_Change;
   totals2.TEC+=table[i].TEC_Change;
-  if(table.EventOccur == true)
-    {
-      totals2.EventChance=15
-    }
-    else
-    {
-      totals2.EventChance=Math.min(90,totals2.EventChance+15)
-    }
-
 }
 
 document.getElementById('RU2').innerText = totals2.RU;
 document.getElementById('Unrest2').innerText = totals2.Unrest;
 document.getElementById('Size2').innerText = totals2.Size;
 document.getElementById('maxIL2').innerText = totals2.maxIL;
-document.getElementById('eventChance2').innerText = totals2.EventChance+"%";
+document.getElementById('eventChance2').innerText = table[selectedMonth+1].EventChance+"%";
 document.getElementById('targetNum2').innerText = Math.ceil(totals2.Size/5);
 document.getElementById('ACC2').innerText = totals2.ACC;
 document.getElementById('CUL2').innerText = totals2.CUL;
