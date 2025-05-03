@@ -130,7 +130,7 @@ function clickedHex(event)
     selectedHex.setAttribute("fill", "#cce5ff");
     selectedHex.setAttribute("fill-opacity","0.0001")
     selectedHex = event.target;
-    selectedHex.setAttribute("fill", "ffff00");
+    selectedHex.setAttribute("fill", "red");
     selectedHex.setAttribute("fill-opacity","0.1")
     //event.target.setAttribute("stroke", "#ff0000");
     console.log(event.target.id);
