@@ -152,11 +152,12 @@ function redraw(records)
         if(table[i].Claim)
         {
             allHexes[i].setAttribute("stroke", "#00FF00");
-            allHexes[i].setAttribute("stroke-width", "2");
+            allHexes[i].setAttribute("stroke-width", "5");
         }
         else if(table[i].Recon)
         {
             allHexes[i].setAttribute("stroke", "#FFFF00");
+            allHexes[i].setAttribute("stroke-width", "3");
         }
     }
 
