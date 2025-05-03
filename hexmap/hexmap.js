@@ -150,15 +150,14 @@ function redraw(records)
     for(i in allHexes)
     {
         if(table[i].Claim)
-            {
-                allHexes[i].setAttribute("stroke", "#00FF00");
-                return;
-            }
-            if(table[i].Recon)
-            {
-                allHexes[i].setAttribute("stroke", "#FFFF00");
-                return;
-            }
+        {
+            allHexes[i].setAttribute("stroke", "#00FF00");
+            polygon.setAttribute("stroke-width", "2");
+        }
+        else if(table[i].Recon)
+        {
+            allHexes[i].setAttribute("stroke", "#FFFF00");
+        }
     }
 
 
