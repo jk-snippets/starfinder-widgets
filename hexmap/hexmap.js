@@ -4,6 +4,7 @@ const baseHex = {x1:59,y1:1,x2:117,y2:34,x3:117,y3:102,x4:59,y4:135,x5:1,y5:102,
 const baseOffsetX = 117;
 const baseOffsetY = 101.5;
 const coordsToLine = new Map();
+const coordsToElement = new Map();
 drawHexmap();
 let selectedHex = document.getElementById("a1");
 grist.setCursorPos({rowId: 1});
@@ -13,10 +14,12 @@ grist.ready({
     allowSelectBy: true,
     requiredAccess: 'read table' 
   });
+
 grist.onRecords(records => {
     table = records;
-    console.log(table);
-    redraw();
+    //console.log(table);
+    table.forEach(redrawHex);
+
 });
 
 
@@ -139,9 +142,18 @@ function clickedHex(event)
     
 }
 
-function redraw()
+function redrawHex(value, index, arr)
 {
-    //TODO
-}
+    if(value.claim)
+    {
+        document.getElementById(value.coord).setAttribute("stroke", "#00FF00");
+        return;
+    }
+    if(value.recon)
+    {
+        document.getElementById(value.coord).setAttribute("stroke", "#FFFF00");
+        return;
+    }
 
+}
 
