@@ -146,12 +146,14 @@ function redrawHex(value, index, arr)
 {
     if(value.claim)
     {
-        document.getElementById(value.coord).setAttribute("stroke", "#00FF00");
+        let ele = document.getElementById(value.coord)
+        ele.setAttribute("stroke", "#00FF00");
         return;
     }
     if(value.recon)
     {
-        document.getElementById(value.coord).setAttribute("stroke", "#FFFF00");
+        let ele = document.getElementById(value.coord)
+        ele.setAttribute("stroke", "#FFFF00");
         return;
     }
 
