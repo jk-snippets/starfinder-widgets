@@ -40,7 +40,8 @@ function drawHexagon(offx, offy, idtoset) {
     polygon.setAttribute("stroke", "#999999");
     polygon.setAttribute("fill", "#cce5ff");
     polygon.setAttribute("fill-opacity","0.0001")
-    polygon.setAttribute("stroke-width", "1.5");
+    polygon.setAttribute("stroke-width", "1");
+    polygon.setAttribute("stroke-dasharray", "2,2" )
     polygon.setAttribute("id", idtoset);
     polygon.setAttribute("onclick", "clickedHex(event)");
     polygon.setAttribute("class", "jk-hex")
