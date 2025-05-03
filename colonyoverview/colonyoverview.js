@@ -7,7 +7,7 @@ selectedMonth = table.length-1;
 document.getElementById('monthNum').innerText = table[selectedMonth].Month-1;
 
 //filter function if needed
-let totals = {RU:0, Unrest:0, Size:0, maxIL:0, ACC:0, CUL:0, ECO:0, MAG:0, TEC:0};
+let totals = {RU:0, Unrest:0, Size:0, maxIL:0, EventChance:0, ACC:0, CUL:0, ECO:0, MAG:0, TEC:0};
 for (let i = 0; i < selectedMonth; i++)
 {
   console.log(table[i]);
@@ -15,6 +15,7 @@ for (let i = 0; i < selectedMonth; i++)
   totals.Unrest+=table[i].Unrest_Change;
   totals.Size+=table[i].Size_Change;
   totals.maxIL+=table[i].MaxItem_Change;
+  totals.EventChance=table[i].EventChance;
   totals.ACC+=table[i].ACC_Change;
   totals.CUL+=table[i].CUL_Change;
   totals.ECO+=table[i].ECO_Change;
@@ -27,6 +28,7 @@ document.getElementById('RU').innerText = totals.RU;
 document.getElementById('Unrest').innerText = totals.Unrest;
 document.getElementById('Size').innerText = totals.Size;
 document.getElementById('maxIL').innerText = totals.maxIL;
+document.getElementById('eventChance2').innerText = totals.EventChance;
 document.getElementById('targetNum').innerText = Math.ceil(totals.Size/5);
 document.getElementById('ACC').innerText = totals.ACC;
 document.getElementById('CUL').innerText = totals.CUL;
@@ -37,7 +39,7 @@ document.getElementById('TEC').innerText = totals.TEC;
 
 
 document.getElementById('monthNum2').innerText = table[selectedMonth].Month-1;
-let totals2 = {RU:0, Unrest:0, Size:0, maxIL:0, ACC:0, CUL:0, ECO:0, MAG:0, TEC:0};
+let totals2 = {RU:0, Unrest:0, Size:0, maxIL:0, EventChance:0, ACC:0, CUL:0, ECO:0, MAG:0, TEC:0};
 for (let i = 0; i < selectedMonth+1; i++)
 {
   
@@ -45,6 +47,7 @@ for (let i = 0; i < selectedMonth+1; i++)
   totals2.Unrest+=table[i].Unrest_Change;
   totals2.Size+=table[i].Size_Change;
   totals2.maxIL+=table[i].MaxItem_Change;
+  totals2.EventChance=table[i].EventChance;
   totals2.ACC+=table[i].ACC_Change;
   totals2.CUL+=table[i].CUL_Change;
   totals2.ECO+=table[i].ECO_Change;
@@ -58,6 +61,7 @@ document.getElementById('RU2').innerText = totals2.RU;
 document.getElementById('Unrest2').innerText = totals2.Unrest;
 document.getElementById('Size2').innerText = totals2.Size;
 document.getElementById('maxIL2').innerText = totals2.maxIL;
+document.getElementById('eventChance2').innerText = totals.EventChance;
 document.getElementById('targetNum2').innerText = Math.ceil(totals2.Size/5);
 document.getElementById('ACC2').innerText = totals2.ACC;
 document.getElementById('CUL2').innerText = totals2.CUL;
