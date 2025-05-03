@@ -145,25 +145,22 @@ function clickedHex(event)
 
 function redraw(records)
 {
-
-    let allHexes = document.getElementsByClassName("jk-hex");
-    allHexes.foreach(redrawHex);
-}
-
-function redrawHex(value, index, arr)
-{
     console.log(table);
+    let allHexes = document.getElementsByClassName("jk-hex");
+    for(i in allHexes)
+    {
+        if(table[index+1].Claim)
+            {
+                value.setAttribute("stroke", "#00FF00");
+                return;
+            }
+            if(table[index+1].Recon)
+            {
+                value.setAttribute("stroke", "#FFFF00");
+                return;
+            }
+    }
 
-    if(table[index+1].Claim)
-    {
-        value.setAttribute("stroke", "#00FF00");
-        return;
-    }
-    if(table[index+1].Recon)
-    {
-        value.setAttribute("stroke", "#FFFF00");
-        return;
-    }
 
 }
 
