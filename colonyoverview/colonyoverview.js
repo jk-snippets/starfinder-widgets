@@ -15,20 +15,26 @@ for (let i = 0; i < selectedMonth; i++)
   totals.Unrest+=table[i].Unrest_Change;
   totals.Size+=table[i].Size_Change;
   totals.maxIL+=table[i].MaxItem_Change;
-  totals.EventChance=table[i].EventChance;
   totals.ACC+=table[i].ACC_Change;
   totals.CUL+=table[i].CUL_Change;
   totals.ECO+=table[i].ECO_Change;
   totals.MAG+=table[i].MAG_Change;
   totals.TEC+=table[i].TEC_Change;
-  
+  if(table.EventOccur)
+  {
+    totals.EventChance=15
+  }
+  else
+  {
+    totals.EventChance=Math.min(90,totals.EventChance+15)
+  }
 }
 
 document.getElementById('RU').innerText = totals.RU;
 document.getElementById('Unrest').innerText = totals.Unrest;
 document.getElementById('Size').innerText = totals.Size;
 document.getElementById('maxIL').innerText = totals.maxIL;
-document.getElementById('eventChance').innerText = totals.EventChance;
+document.getElementById('eventChance').innerText = totals.EventChance+"%";
 document.getElementById('targetNum').innerText = Math.ceil(totals.Size/5);
 document.getElementById('ACC').innerText = totals.ACC;
 document.getElementById('CUL').innerText = totals.CUL;
@@ -47,13 +53,19 @@ for (let i = 0; i < selectedMonth+1; i++)
   totals2.Unrest+=table[i].Unrest_Change;
   totals2.Size+=table[i].Size_Change;
   totals2.maxIL+=table[i].MaxItem_Change;
-  totals2.EventChance=table[i+1].EventChance;
   totals2.ACC+=table[i].ACC_Change;
   totals2.CUL+=table[i].CUL_Change;
   totals2.ECO+=table[i].ECO_Change;
   totals2.MAG+=table[i].MAG_Change;
   totals2.TEC+=table[i].TEC_Change;
-  
+  if(table.EventOccur)
+    {
+      totals2.EventChance=15
+    }
+    else
+    {
+      totals2.EventChance=Math.min(90,totals2.EventChance+15)
+    }
 
 }
 
@@ -61,7 +73,7 @@ document.getElementById('RU2').innerText = totals2.RU;
 document.getElementById('Unrest2').innerText = totals2.Unrest;
 document.getElementById('Size2').innerText = totals2.Size;
 document.getElementById('maxIL2').innerText = totals2.maxIL;
-document.getElementById('eventChance2').innerText = totals.EventChance;
+document.getElementById('eventChance2').innerText = totals.EventChance+"%";
 document.getElementById('targetNum2').innerText = Math.ceil(totals2.Size/5);
 document.getElementById('ACC2').innerText = totals2.ACC;
 document.getElementById('CUL2').innerText = totals2.CUL;
