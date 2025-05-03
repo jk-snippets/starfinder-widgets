@@ -41,7 +41,7 @@ function drawHexagon(offx, offy, idtoset) {
     polygon.setAttribute("fill", "#cce5ff");
     polygon.setAttribute("fill-opacity","0.0001")
     polygon.setAttribute("stroke-width", "1");
-    polygon.setAttribute("stroke-dasharray", "2,2" )
+    polygon.setAttribute("stroke-dasharray", "1,2" )
     polygon.setAttribute("id", idtoset);
     polygon.setAttribute("onclick", "clickedHex(event)");
     polygon.setAttribute("class", "jk-hex")
@@ -154,11 +154,13 @@ function redraw(records)
         {
             allHexes[i].setAttribute("stroke", "#00FF00");
             allHexes[i].setAttribute("stroke-width", "5");
+            allHexes[i].removeAttribute("stroke-dasharray");
         }
         else if(table[i].Recon)
         {
             allHexes[i].setAttribute("stroke", "#FFFF00");
             allHexes[i].setAttribute("stroke-width", "3");
+            allHexes[i].removeAttribute("stroke-dasharray");
         }
     }
 
