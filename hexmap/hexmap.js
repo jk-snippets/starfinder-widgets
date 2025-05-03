@@ -128,9 +128,9 @@ function clickedHex(event)
 {
     selectedHex = null;
     event.target.setAttribute("stroke", "#ff0000");
-    console.log(event.target.id)
-
-    grist.setCursorPos({rowId: coordsToLine.get(event.target.id)});
+    console.log(event.target.id);
+    let pos = coordsToLine.get(event.target.id)+1;
+    grist.setCursorPos({rowId: pos});
     
 }
 
