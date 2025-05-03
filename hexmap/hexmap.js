@@ -18,7 +18,7 @@ grist.ready({
 grist.onRecords(records => {
     table = records;
     //console.log(table);
-    table.forEach(redrawHex);
+    redraw(records);
 
 });
 
@@ -43,6 +43,7 @@ function drawHexagon(offx, offy, idtoset) {
     polygon.setAttribute("stroke-width", "1.5");
     polygon.setAttribute("id", idtoset);
     polygon.setAttribute("onclick", "clickedHex(event)");
+    polygon.setAttribute("class", "jk-hex")
     svg.appendChild(polygon);
 }
 
@@ -142,20 +143,25 @@ function clickedHex(event)
     
 }
 
+function redraw(records)
+{
+
+    let allHexes = document.getElementsByClassName("jk-hex");
+    allHexes.foreach(redrawHex);
+}
+
 function redrawHex(value, index, arr)
 {
-    if(value.claim)
+    console.log(table);
+
+    if(table[index+1].Claim)
     {
-        console.log(value)
-        let ele = document.getElementById(value.coord)
-        ele.setAttribute("stroke", "#00FF00");
+        value.setAttribute("stroke", "#00FF00");
         return;
     }
-    if(value.recon)
+    if(table[index+1].Recon)
     {
-        console.log(value)
-        let ele = document.getElementById(value.coord)
-        ele.setAttribute("stroke", "#FFFF00");
+        value.setAttribute("stroke", "#FFFF00");
         return;
     }
 
