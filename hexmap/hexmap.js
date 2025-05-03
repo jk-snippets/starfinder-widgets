@@ -149,12 +149,12 @@ function redraw(records)
     let allHexes = document.getElementsByClassName("jk-hex");
     for(i in allHexes)
     {
-        if(table[i+1].Claim)
+        if(table[i].Claim)
             {
                 allHexes[i].setAttribute("stroke", "#00FF00");
                 return;
             }
-            if(table[i+1].Recon)
+            if(table[i].Recon)
             {
                 allHexes[i].setAttribute("stroke", "#FFFF00");
                 return;
