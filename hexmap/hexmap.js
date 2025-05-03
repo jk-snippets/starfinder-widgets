@@ -170,7 +170,7 @@ function redraw(records)
             allHexes[i].setAttribute("stroke-dasharray", "1,2" )
         }
 
-        if(table[i].Project == "Settlement")
+        /*if(table[i].Project == "Settlement")
         {
             const colImage = document.createElementNS("http://www.w3.org/2000/svg", "image");
             colImage.setAttribute("href", "img/col1.png");
@@ -181,7 +181,7 @@ function redraw(records)
         else
         {
             //todo
-        }
+        }*/
 
     }
 
