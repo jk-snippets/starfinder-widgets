@@ -1,6 +1,6 @@
 let selectedHex = null;
 let table = null;
-const svg = document.getElementById("hexGrid");
+let svg =  document.getElementById("hexGrid");
 const baseHex = {x1:59,y1:1,x2:117,y2:34,x3:117,y3:102,x4:59,y4:135,x5:1,y5:102,x6:1,y6:34};
 const baseOffsetX = 117;
 const baseOffsetY = 101.5;
@@ -23,7 +23,6 @@ grist.onRecords(records => {
 function drawHexagon(offx, offy, idtoset) {
     //build the hexagons from my very hacky base hexagon
     let points = [];
-
     points.push((baseHex.x1+offx)+","+(baseHex.y1+offy));
     points.push((baseHex.x2+offx)+","+(baseHex.y2+offy));
     points.push((baseHex.x3+offx)+","+(baseHex.y3+offy));
