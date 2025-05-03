@@ -1,5 +1,3 @@
-let selectedHex = document.getElementById("a1");;
-grist.setCursorPos({rowId: 1});
 let table = null;
 let svg =  document.getElementById("hexGrid");
 const baseHex = {x1:59,y1:1,x2:117,y2:34,x3:117,y3:102,x4:59,y4:135,x5:1,y5:102,x6:1,y6:34};
@@ -7,6 +5,8 @@ const baseOffsetX = 117;
 const baseOffsetY = 101.5;
 const coordsToLine = new Map();
 drawHexmap();
+let selectedHex = document.getElementById("a1");
+grist.setCursorPos({rowId: 1});
 
 grist.ready({
 
