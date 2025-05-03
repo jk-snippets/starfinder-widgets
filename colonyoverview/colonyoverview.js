@@ -20,7 +20,7 @@ for (let i = 0; i < selectedMonth; i++)
   totals.ECO+=table[i].ECO_Change;
   totals.MAG+=table[i].MAG_Change;
   totals.TEC+=table[i].TEC_Change;
-  if(table.EventOccur)
+  if(table.EventOccur == true)
   {
     totals.EventChance=15
   }
@@ -58,7 +58,7 @@ for (let i = 0; i < selectedMonth+1; i++)
   totals2.ECO+=table[i].ECO_Change;
   totals2.MAG+=table[i].MAG_Change;
   totals2.TEC+=table[i].TEC_Change;
-  if(table.EventOccur)
+  if(table.EventOccur == true)
     {
       totals2.EventChance=15
     }
