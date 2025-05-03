@@ -150,7 +150,7 @@ function redraw(records)
     let allHexes = document.getElementsByClassName("jk-hex");
     for(i in allHexes)
     {
-        console.log(i)
+        
         if(table[i].Claim)
         {
             allHexes[i].setAttribute("stroke", "#00FF00");
@@ -174,6 +174,8 @@ function redraw(records)
         {
             const colImage = document.createElementNS("http://www.w3.org/2000/svg", "image");
             colImage.setAttribute("href", "img/col1.png");
+            colImage.setAttribute("width", "100%");
+            colImage.setAttribute("height", "100%");
             allHexes[i].appendChild(colImage);
         }
         else
