@@ -159,7 +159,7 @@ function redraw(records)
         else if(table[i].Recon)
         {
             allHexes[i].setAttribute("stroke", "#FFFF00");
-            allHexes[i].setAttribute("stroke-width", "3");
+            allHexes[i].setAttribute("stroke-width", "1.5");
             allHexes[i].removeAttribute("stroke-dasharray");
         }
         else
