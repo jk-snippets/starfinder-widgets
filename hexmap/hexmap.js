@@ -150,6 +150,7 @@ function redraw(records)
     let allHexes = document.getElementsByClassName("jk-hex");
     for(i in allHexes)
     {
+        console.log(i)
         if(table[i].Claim)
         {
             allHexes[i].setAttribute("stroke", "#00FF00");
