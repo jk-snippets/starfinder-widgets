@@ -1,4 +1,5 @@
-let selectedHex = null;
+let selectedHex = document.getElementById("a1");;
+grist.setCursorPos({rowId: 1});
 let table = null;
 let svg =  document.getElementById("hexGrid");
 const baseHex = {x1:59,y1:1,x2:117,y2:34,x3:117,y3:102,x4:59,y4:135,x5:1,y5:102,x6:1,y6:34};
@@ -44,7 +45,7 @@ function drawHexagon(offx, offy, idtoset) {
 
 //draw hexes them on the svg canvas, fit to the map
 function drawHexmap(){
-    let incnum =0;
+    let incnum =1;
     for(let i=0; i<8;i++)
     {
         drawHexagon(baseOffsetX*i, 0, "a"+(i+1));
@@ -133,7 +134,7 @@ function clickedHex(event)
     selectedHex.setAttribute("fill-opacity","0.1")
     //event.target.setAttribute("stroke", "#ff0000");
     console.log(event.target.id);
-    let pos = coordsToLine.get(event.target.id)+1;
+    let pos = coordsToLine.get(event.target.id);
     grist.setCursorPos({rowId: pos});
     
 }
