@@ -35,7 +35,7 @@ function drawHexagon(offx, offy, idtoset) {
     polygon.setAttribute("points", points.join(" "));
     polygon.setAttribute("stroke", "#999999");
     polygon.setAttribute("fill", "#cce5ff");
-    polygon.setAttribute("fill-opacity","0.001")
+    polygon.setAttribute("fill-opacity","0.0001")
     polygon.setAttribute("stroke-width", "1.5");
     polygon.setAttribute("id", idtoset);
     polygon.setAttribute("onclick", "clickedHex(event)");
@@ -126,8 +126,12 @@ for(let i=0; i<7;i++)
 
 function clickedHex(event)
 {
-    selectedHex = null;
-    event.target.setAttribute("stroke", "#ff0000");
+    selectedHex.setAttribute("fill", "#cce5ff");
+    selectedHex.setAttribute("fill-opacity","0.0001")
+    selectedHex = event.target;
+    selectedHex.setAttribute("fill", "ffff00");
+    selectedHex.setAttribute("fill-opacity","0.1")
+    //event.target.setAttribute("stroke", "#ff0000");
     console.log(event.target.id);
     let pos = coordsToLine.get(event.target.id)+1;
     grist.setCursorPos({rowId: pos});
