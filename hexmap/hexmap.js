@@ -164,9 +164,9 @@ function redraw(records)
         }
         else
         {
-            polygon.setAttribute("stroke", "#999999");
-            polygon.setAttribute("stroke-width", "1");
-            polygon.setAttribute("stroke-dasharray", "1,2" )
+            allHexes[i].setAttribute("stroke", "#999999");
+            allHexes[i].setAttribute("stroke-width", "1");
+            allHexes[i].setAttribute("stroke-dasharray", "1,2" )
         }
     }
 
